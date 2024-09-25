@@ -10,7 +10,7 @@ export default {
 
 <template>
     <section id="jumbo">
-        <h3>Instrumental Rock</h3>
+        <h2>Instrumental Rock</h2>
         <h1>Music in this video</h1>
         <h1>Music of the spirit</h1>
     </section>
@@ -28,13 +28,16 @@ export default {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-transform: uppercase;
         //Inizio stile h3
-        h3 {
+        h2 {
             color: #F2870C;
+            font-size: 2rem;
         }
         //Inizio stile h1
         h1 {
             color: #FFFFFF;
+            font-size: 4rem;
         }
     }
 </style>
