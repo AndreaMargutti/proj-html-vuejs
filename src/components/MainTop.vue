@@ -1,6 +1,5 @@
 <script>
-import MainTop from "./MainTop.vue"
-
+import MainTopJumbo from "./MainTopJumbo.vue"
 export default {
   data() {
     return {
@@ -8,13 +7,13 @@ export default {
     }
   },
   components: {
-    MainTop,
+    MainTopJumbo
   }
 }
 </script>
 
 <template>
-  <MainTop />
+    <MainTopJumbo />
 </template>
 
 <style scoped>
