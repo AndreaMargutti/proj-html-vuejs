@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      
+
     }
   }
 }
@@ -10,7 +10,7 @@ export default {
 
 <template>
   <h1>AppFooter</h1>
+  <h2>STO CREANDO IL FOOTER</h2>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
