@@ -9,16 +9,17 @@ export default {
 </script>
 
 <template>
-    <div class="card text-center mb-3" style="width: 18rem;">
+<div class="card" style="width: 18rem;">
+  <img src="../assets/img/image (10).svg" class="card-img-top" alt="...">
   <div class="card-body">
-    <i class="bi bi-speaker"></i>
-    <h5 class="card-title">Special title treatment</h5>
-    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">Original Ideas </h5>
+    <p class="card-text">Contrary popular belief, Lorem Ipsum not simply ipsum random text.</p>
   </div>
 </div>
-
 </template>
 
 <style lang="scss" scoped>
+// div{
+//   text-align: center;
+// }
 </style>

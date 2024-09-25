@@ -22,7 +22,7 @@ export default {
   <AppFooter />
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @use "./style/general.scss" as *;
-@use "bootstrap/scss/bootstrap.scss";
+@use "../node_modules/bootstrap/scss/bootstrap.scss" as *;
 </style>
