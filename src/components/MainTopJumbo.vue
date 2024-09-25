@@ -1,20 +1,15 @@
 <script>
-import MainTop from "./MainTop.vue"
-
 export default {
   data() {
     return {
       
     }
-  },
-  components: {
-    MainTop,
   }
 }
 </script>
 
 <template>
-  <MainTop />
+    <h1>MainTopJumbo</h1>
 </template>
 
 <style scoped>
