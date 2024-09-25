@@ -72,22 +72,43 @@ export default {
       // dello schermo e arrotodono per eccesso
       const boxWidth = Math.ceil(windowSize / boxesPerPage);
       return `-${boxWidth * this.currentIndex}px`; 
+    },
+    // devo gestirmi i comandi della freccia a destra e freccia a sinistra nella tastiera
+    handleKeystroke(keyStrokeEvent) {
+      console.log("keystroke", keyStrokeEvent);
+
+      if (keyStrokeEvent.code === 'ArrowRight') {
+        this.toNextBox();
+        // devo resettare intervallo
+        this.restartInterval();
+      } else if (keyStrokeEvent.code === 'ArrowLeft') {
+        this.toPreviousBox();
+        this.restartInterval();
+      }
+
+    },
+    restartInterval() {
+      clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        this.toNextBox();
+      }, autoIncrementDuration);
     }
   },
   created(){
-    intervalId = setInterval(() => {
-      this.toNextBox();
-    }, autoIncrementDuration);
+    this.restartInterval();
+    window.addEventListener('keydown', this.handleKeystroke);
   },
   unmounted(){
     clearInterval(intervalId);
+    // per evitare conflitti rimuovere alla fine
+    window.removeEventListener('keydown', this.handleKeystroke);
   }
 }
 </script>
 
 <template>
   <!-- provo inizialmente con gli eventi al click per scorrere a destra e a sinistra -->
-  <div class="main-carousel" @click.exact="toNextBox" @click.ctrl="toPreviousBox">
+  <div class="main-carousel" @keydown.right="toNextBox" @keydown.left="toPreviousBox">
 
     <div class="box" 
        v-for="(itemCarousel, index) in getImageCarousel()" 
