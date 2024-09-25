@@ -47,7 +47,6 @@ export default {
       <span id="card-text">{{ card.text }}</span>
     </section>
   </div>
-  `,
 </template>
 
 <style lang="scss" scoped>
