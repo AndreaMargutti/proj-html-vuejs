@@ -2,7 +2,6 @@
 export default {
     data() {
         return {
-
         }
     }
 }
@@ -16,7 +15,7 @@ export default {
         <ul>
             <li>
                 <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    502 New Design Str, Melbourne, San Francisco, CA 94110, United States of America​ Australia
                 </p>
             </li>
             <li>phone number</li>
@@ -31,9 +30,18 @@ export default {
 <style lang="scss" scoped>
 .box {
     margin: 1rem;
+    flex-basis: 10%;
+
+    &>* {
+        padding-bottom: 1rem;
+    }
 }
 
 ul {
     list-style-type: none;
+
+    &>* {
+        padding-bottom: 1rem;
+    }
 }
 </style>

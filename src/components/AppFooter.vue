@@ -16,10 +16,8 @@ export default {
 </script>
 
 <template>
-  <h1>AppFooter</h1>
   <TopFooter />
   <BottomFooter />
-
 </template>
 
 <style lang="scss" scoped></style>

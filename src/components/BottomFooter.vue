@@ -10,8 +10,7 @@ export default {
 
 <template>
     <div class="container">
-        <h4>Bottom Footer</h4>
-        <span>Testo Copyright</span>
+        <span>© 2024 All Rights Reserved. Developed By TemplateMela</span>
     </div>
 </template>
 
@@ -19,5 +18,6 @@ export default {
 .container {
     color: white;
     background-color: black;
+    text-align: center;
 }
 </style>

@@ -6,7 +6,79 @@ import TopFooterNewstletter from './TopFooterNewstletter.vue';
 export default {
     data() {
         return {
-
+            bookingsContacts: {
+                address: '502 New Design Str, Melbourne, San Francisco, CA 94110, United States of America​ Australia',
+                phoneNumber: '1 123-456-789',
+                email: 'demo@example.com',
+                socials: [
+                    {
+                        name: 'instagram',
+                        link: '#'
+                    },
+                    {
+                        name: 'facebook',
+                        link: '#'
+                    },
+                    {
+                        name: 'twitter',
+                        link: '#'
+                    },
+                    {
+                        name: 'youtube',
+                        link: '#'
+                    }
+                ]
+            },
+            InformationLinks: {
+                title: 'Information',
+                links: [
+                    {
+                        text: 'Product Support',
+                        link: '#'
+                    },
+                    {
+                        text: 'Checkout',
+                        link: '#'
+                    },
+                    {
+                        text: 'Report Abuse',
+                        link: '#'
+                    },
+                    {
+                        text: 'Redeem Voucher',
+                        link: '#'
+                    },
+                    {
+                        text: 'Order Status',
+                        link: '#'
+                    }
+                ]
+            },
+            SupportLink: {
+                title: 'Support',
+                links: [
+                    {
+                        text: 'Policies & Rules',
+                        link: '#'
+                    },
+                    {
+                        text: 'Privacy Policy',
+                        link: '#'
+                    },
+                    {
+                        text: 'License Policy',
+                        link: '#'
+                    },
+                    {
+                        text: 'My Account',
+                        link: '#'
+                    },
+                    {
+                        text: 'Locality',
+                        link: '#'
+                    },
+                ]
+            }
         }
     },
     components: {
@@ -18,9 +90,8 @@ export default {
 </script>
 
 <template>
-    <h1>TOP FOOTER</h1>
     <div class="container">
-        <TopFooterBookings />
+        <TopFooterBookings :contacts="bookingsContacts" />
         <TopFooterLinks />
         <TopFooterLinks />
         <TopFooterNewstletter />
@@ -35,5 +106,6 @@ export default {
     background-color: black;
     display: flex;
     justify-content: space-around;
+    gap: 2rem;
 }
 </style>
