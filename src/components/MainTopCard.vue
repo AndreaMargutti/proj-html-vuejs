@@ -9,7 +9,15 @@ export default {
 </script>
 
 <template>
-    <h1 style="color: red">Ciao sono la Card</h1>
+    <div class="card text-center mb-3" style="width: 18rem;">
+  <div class="card-body">
+    <i class="bi bi-speaker"></i>
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
 </template>
 
 <style lang="scss" scoped>
