@@ -1,20 +1,20 @@
 <script>
-import MainTop from "./MainTop.vue"
-
+import MainTopJumbo from "./MainTopJumbo.vue"
 export default {
   data() {
     return {
-
+      
     }
   },
   components: {
-    MainTop,
+    MainTopJumbo
   }
 }
 </script>
 
 <template>
-  <MainTop />
+    <MainTopJumbo />
 </template>
 
-<style scoped></style>
+<style scoped>
+</style>
