@@ -24,19 +24,19 @@ export default {
         } else {
             this.activeIndex--;
         }
-    }
-  },
+    },
 
-  created(){
-    console.log(this.activeIndex)
+    getImgPaths: function(imgPath){
+        return new URL(imgPath, import.meta.url).href;
+    }
   }
 }
 </script>
 
 <template>
     <section id="jumbo">
-        <img :src="imageList[activeIndex]" alt="">
-        <button class="slide-btn left"> < </button>
+        <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="">
+        <button class="slide-btn left" @click="changeImg"> < </button>
             <div class="centered">
                 <h2>Instrumental Rock</h2>
                 <h1>Music in this video</h1>
