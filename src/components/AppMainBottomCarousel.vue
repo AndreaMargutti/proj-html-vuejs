@@ -6,6 +6,12 @@ const minIndex = 0;
 //stabilisco come max, l'indice iniziale della terza copia dell'array 
 const maxIndex = 20;
 
+// in millisecondi
+const autoIncrementDuration = 3000;
+
+// dove salvo l'id del setInterval
+let intervalId = null;
+
 export default {
   data() {
     return {
@@ -31,7 +37,7 @@ export default {
       return imgPath;
     },
     // vado a gestire lo slide che scorre a destra
-    onArrowRight() {
+    toNextBox() {
       this.currentIndex++;
       // vado a mettere una condizione di controllo fino a quando
       // deve andare avanti
@@ -41,7 +47,7 @@ export default {
       console.log("arrowRight", this.currentIndex);
     },
     // vado a gestire lo slide che scorre a sinistra
-    onArrowLeft() {
+    toPreviousBox() {
       this.currentIndex--;
       if (this.currentIndex < minIndex) {
         this.currentIndex = startIndex - 1;
@@ -67,13 +73,21 @@ export default {
       const boxWidth = Math.ceil(windowSize / boxesPerPage);
       return `-${boxWidth * this.currentIndex}px`; 
     }
+  },
+  created(){
+    intervalId = setInterval(() => {
+      this.toNextBox();
+    }, autoIncrementDuration);
+  },
+  unmounted(){
+    clearInterval(intervalId);
   }
 }
 </script>
 
 <template>
   <!-- provo inizialmente con gli eventi al click per scorrere a destra e a sinistra -->
-  <div class="main-carousel" @click.exact="onArrowRight" @click.ctrl="onArrowLeft">
+  <div class="main-carousel" @click.exact="toNextBox" @click.ctrl="toPreviousBox">
 
     <div class="box" 
        v-for="(itemCarousel, index) in getImageCarousel()" 
