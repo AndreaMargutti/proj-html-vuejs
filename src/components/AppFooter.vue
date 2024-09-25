@@ -1,5 +1,6 @@
 <script>
 import BottomFooter from './BottomFooter.vue';
+import TopFooter from './TopFooter.vue';
 
 export default {
   data() {
@@ -9,18 +10,16 @@ export default {
   },
   components: {
     BottomFooter,
+    TopFooter
   }
 }
 </script>
 
 <template>
   <h1>AppFooter</h1>
+  <TopFooter />
   <BottomFooter />
+
 </template>
 
-<style lang="scss" scoped>
-template {
-  background-color: black;
-  color: white;
-}
-</style>
+<style lang="scss" scoped></style>
