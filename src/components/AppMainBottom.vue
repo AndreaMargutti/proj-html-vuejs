@@ -25,18 +25,18 @@ export default {
 
 <style lang="scss" scoped>
 #blog{
-    background-color: black;
-    color: #f2870c;
-    height: 600px;
+  background-color: black;
+  color: #f2870c;
+  height: 600px;
 
-    h4{
-        text-align: center;
-        padding-top: 50px;
-    }
-    h2{
-        color: white;
-        text-align: center;
-        font-size: 3.5rem;
-    }
+  h4{
+    text-align: center;
+    padding-top: 50px;
+  }
+  h2{
+    color: white;
+    text-align: center;
+    font-size: 3.5rem;
+  }
 }
 </style>
