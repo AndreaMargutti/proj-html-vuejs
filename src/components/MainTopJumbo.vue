@@ -19,8 +19,10 @@ export default {
 <style lang="scss" scoped>
     #jumbo {
         // Da togliere in seguito
-        height: 30rem;
-        background-color: #000000;
+        min-height: 50rem;
+        background-image: url('../assets/img/image.png');
+        background-repeat: no-repeat;
+        background-size: cover;
         
         display: flex;
         flex-direction: column;
