@@ -7,20 +7,35 @@ export default {
 
   data() {
     return {
-      //creo l'url per l'immagine di sfondo
-      imageNames: "../assets/img/image.png"
+      //creo l'array per le img per l'immagine di sfondo
+      imageList: [
+          "../assets/img/image.png",
+          "../assets/img/image (1).png"
+      ],
+    //creo l'indice per girare nell'array
+      activeIndex: 0,
     }
   },
 
   methods: {
+    changeImg(){
+        if (this.activeIndex === 0){
+            this.activeIndex++;
+        } else {
+            this.activeIndex--;
+        }
+    }
+  },
 
+  created(){
+    console.log(this.activeIndex)
   }
 }
 </script>
 
 <template>
     <section id="jumbo">
-        <img src="../assets/img/image.png" alt="">
+        <img :src="imageList[activeIndex]" alt="">
         <button class="slide-btn left"> < </button>
             <div class="centered">
                 <h2>Instrumental Rock</h2>
@@ -28,7 +43,7 @@ export default {
                 <h1>Music of the spirit</h1>
                 <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
             </div>
-            <button class="slide-btn right"> > </button>
+            <button class="slide-btn right" @click="changeImg"> > </button>
         </section>
 </template>
 
