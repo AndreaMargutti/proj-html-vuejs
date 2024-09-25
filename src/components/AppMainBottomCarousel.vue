@@ -36,25 +36,27 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+
+// nell'ipotesi che il carousel abbia design vada da una estremità all'altra
+// dello schermo e che le box delle immagini siano quadrate
+// l'altezza dei box sarà la stessa della larghezza ovvero 100vw/numero dei box
+// delle immagini in questo caso 9
+
+$height: calc(100vw / 9);
+
 .main-carousel{
-  background-color: pink;
-  height: 200px;
-  display: flex;
-  align-items: center;
-
-
+  height: $height;
+  overflow: hidden;
+  white-space: nowrap;
   .box{
-  height: 100px;
-  width: calc(100% / 10);
-  border: 1px black;
-  background-color: blue;
+  height:$height;
+  width: calc(100% / 9);
+  display: inline-block;
     img{
       width: 100%;
       height: auto;
     }
   }
-
-
 }
 
 </style>
