@@ -8,10 +8,7 @@ export default {
   data() {
     return {
       //creo l'url per l'immagine di sfondo
-      imageNames: [
-        'image.png',
-        'image (1).png',
-      ]
+      imageNames: "../assets/img/image.png"
     }
   },
 
@@ -23,21 +20,25 @@ export default {
 
 <template>
     <section id="jumbo">
-            <button class="slide-btn left" @click="changeImg"> < </button>
-            <h2>Instrumental Rock</h2>
-            <h1>Music in this video</h1>
-            <h1>Music of the spirit</h1>
-            <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
+        <img src="../assets/img/image.png" alt="">
+            <button class="slide-btn left"> < </button>
+            <div class="centered">
+                <h2>Instrumental Rock</h2>
+                <h1>Music in this video</h1>
+                <h1>Music of the spirit</h1>
+                <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
+            </div>
             <button class="slide-btn right"> > </button>
         </section>
 </template>
 
 <style lang="scss" scoped>
     #jumbo {
+        //styling img
+        img {
+            width: 100%;
+        }
         min-height: 50rem;
-        background-image: url('../assets/img/image.png');
-        background-repeat: no-repeat;
-        background-size: cover;
         position: relative;
         
         display: flex;
@@ -75,5 +76,10 @@ export default {
             right: 0;
         }
     }
-    //sezione bottoni
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 </style>
