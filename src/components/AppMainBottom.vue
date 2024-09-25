@@ -16,7 +16,7 @@ export default {
 
 <template>
     <section id="blog">
-        <h3>MUSIC BLOG</h3>
+        <h4>MUSIC BLOG</h4>
         <h2>BEST MUSIC BLOG</h2>
         <AppMainBottomBlogPost/>
         <AppMainBottomCarousel/>
@@ -27,7 +27,16 @@ export default {
 #blog{
     background-color: black;
     color: #f2870c;
-    height: 200px;
-}
+    height: 600px;
 
+    h4{
+        text-align: center;
+        padding-top: 50px;
+    }
+    h2{
+        color: white;
+        text-align: center;
+        font-size: 3.5rem;
+    }
+}
 </style>
