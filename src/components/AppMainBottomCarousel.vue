@@ -104,6 +104,7 @@ $height: calc(100vw / $boxes_per_page);
   height:$height;
   width: calc(100% / $boxes_per_page);
   position: relative;
+  transition: all .5s ease-in-out;
   display: inline-block;
     img{
       width: 100%;
