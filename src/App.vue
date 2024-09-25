@@ -9,7 +9,9 @@ export default {
     }
   },
   components: {
-    AppHeader
+    AppHeader,
+    AppMain,
+    AppFooter
   }
 }
 </script>
