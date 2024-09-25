@@ -1,20 +1,29 @@
 <script>
 import ReadMoreBtn from "./ReadMoreBtn.vue"
 export default {
+    components: {
+      ReadMoreBtn
+    },
+
   data() {
     return {
-      
+      //creo l'url per l'immagine di sfondo
+      imageNames: [
+        'image.png',
+        'image (1).png',
+      ]
     }
   },
-  components: {
-    ReadMoreBtn
+
+  methods: {
+
   }
 }
 </script>
 
 <template>
     <section id="jumbo">
-            <button class="slide-btn left"> < </button>
+            <button class="slide-btn left" @click="changeImg"> < </button>
             <h2>Instrumental Rock</h2>
             <h1>Music in this video</h1>
             <h1>Music of the spirit</h1>
