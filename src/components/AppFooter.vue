@@ -1,16 +1,26 @@
 <script>
+import BottomFooter from './BottomFooter.vue';
+
 export default {
   data() {
     return {
 
     }
+  },
+  components: {
+    BottomFooter,
   }
 }
 </script>
 
 <template>
   <h1>AppFooter</h1>
-  <h2>STO CREANDO IL FOOTER</h2>
+  <BottomFooter />
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+template {
+  background-color: black;
+  color: white;
+}
+</style>
