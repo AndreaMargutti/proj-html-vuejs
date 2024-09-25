@@ -4,7 +4,7 @@ import MainTop from "./MainTop.vue"
 export default {
   data() {
     return {
-      
+
     }
   },
   components: {
@@ -17,5 +17,4 @@ export default {
   <MainTop />
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
