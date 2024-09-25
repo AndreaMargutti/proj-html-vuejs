@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-<div class="card" style="width: 18rem;">
+  <div class="card text-center w-25">
   <img src="../assets/img/image (10).svg" class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Original Ideas </h5>
@@ -19,7 +19,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-// div{
-//   text-align: center;
-// }
+.card {
+  background-color: #121212;
+  color: #ffffff;
+  border-radius: 0;
+  padding: 30px;
+  img {
+    filter: invert(100%);
+    height: 200px;
+  }
+}
 </style>
