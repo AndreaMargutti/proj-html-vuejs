@@ -1,9 +1,13 @@
 <script>
+import ReadMoreBtn from "./ReadMoreBtn.vue"
 export default {
   data() {
     return {
       
     }
+  },
+  components: {
+    ReadMoreBtn
   }
 }
 </script>
@@ -13,6 +17,7 @@ export default {
         <h2>Instrumental Rock</h2>
         <h1>Music in this video</h1>
         <h1>Music of the spirit</h1>
+        <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
     </section>
 </template>
 
@@ -38,6 +43,7 @@ export default {
         h1 {
             color: #FFFFFF;
             font-size: 4rem;
+            padding: 50px 0; 
         }
     }
 </style>
