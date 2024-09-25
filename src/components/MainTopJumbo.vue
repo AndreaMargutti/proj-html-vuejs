@@ -14,20 +14,22 @@ export default {
 
 <template>
     <section id="jumbo">
-        <h2>Instrumental Rock</h2>
-        <h1>Music in this video</h1>
-        <h1>Music of the spirit</h1>
-        <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
-    </section>
+            <button class="slide-btn left"> < </button>
+            <h2>Instrumental Rock</h2>
+            <h1>Music in this video</h1>
+            <h1>Music of the spirit</h1>
+            <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
+            <button class="slide-btn right"> > </button>
+        </section>
 </template>
 
 <style lang="scss" scoped>
     #jumbo {
-        // Da togliere in seguito
         min-height: 50rem;
         background-image: url('../assets/img/image.png');
         background-repeat: no-repeat;
         background-size: cover;
+        position: relative;
         
         display: flex;
         flex-direction: column;
@@ -45,5 +47,24 @@ export default {
             font-size: 4rem;
             padding: 50px 0; 
         }
+        //bottoni
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            //stile dei bottoni
+            color: #FFFFFF;
+            padding: 20px;
+            margin: 0 10px;
+            background-color: #000000;
+            opacity: 0.5;
+            border: none;
+        }
+        .left {
+            left: 0;
+        }
+        .right {
+            right: 0;
+        }
     }
+    //sezione bottoni
 </style>
