@@ -7,7 +7,9 @@ export default {
 </script>
 
 <template>
-  <h1>AppHeader</h1>
+  <div class="main-jazz">
+    <div></div>
+  </div>
 </template>
 
 <style scoped></style>
