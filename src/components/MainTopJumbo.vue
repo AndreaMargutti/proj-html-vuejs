@@ -31,9 +31,9 @@ export default {
     }
   },
 
-//   created(){
-//     setInterval(this.changeImg, 2000)
-//   }
+   created(){
+     setInterval(this.changeImg, 2000)
+   }
 }
 </script>
 
