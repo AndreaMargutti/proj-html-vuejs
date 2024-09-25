@@ -14,22 +14,26 @@ export default {
 </script>
 
 <template>
-    <div class="box">
-        <h1>
-            newsletter
-        </h1>
-        <input type="text" placeholder="Email">
-        <input type="text" placeholder="Message">
-        <ReadMoreBtn />
+    <div class="container">
+        <h2 class="mb-4">
+            NEWSLETTER
+        </h2>
+        <input class="mb-4" type="text" placeholder="Email">
+        <input class="mb-4" type="text" placeholder="Message">
+        <div class="btn">
+            <ReadMoreBtn />
+        </div>
     </div>
 
 </template>
 
 <style lang="scss" scoped>
-.box {
-    margin: 1rem;
+.container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+
+    .btn {
+        align-self: flex-start;
+    }
 }
 </style>

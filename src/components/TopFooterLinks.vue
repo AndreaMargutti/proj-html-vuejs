@@ -4,37 +4,42 @@ export default {
         return {
 
         }
+    },
+    props: {
+        footerLinks: {
+            type: Object,
+            required: true,
+        }
     }
+
 }
 </script>
 
 <template>
-    <div class="box">
-        <h3>TITOLO</h3>
+    <div class="container">
+        <h2 class="mb-4">{{ footerLinks.title }}</h2>
         <ul>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
-            <li>link</li>
+            <li class="mb-1" v-for="(link, index) in footerLinks.links" :key="index">
+                <a :href="link.link">{{ link.text }}</a>
+            </li>
         </ul>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.box {
-    margin: 1rem;
-
-    h3 {
-        padding-bottom: 1rem;
+.container {
+    h2 {
+        text-transform: uppercase;
     }
 }
 
 ul {
     list-style-type: none;
+    padding-left: 0;
+}
 
-    &>* {
-        padding-bottom: 1rem;
-    }
+a {
+    text-decoration: none;
+    color: white;
 }
 </style>

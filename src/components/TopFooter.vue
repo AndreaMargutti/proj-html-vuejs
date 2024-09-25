@@ -9,7 +9,10 @@ export default {
             bookingsContacts: {
                 address: '502 New Design Str, Melbourne, San Francisco, CA 94110, United States of America​ Australia',
                 phoneNumber: '1 123-456-789',
-                email: 'demo@example.com',
+                email: {
+                    text: 'demo@example.com',
+                    link: '#'
+                },
                 socials: [
                     {
                         name: 'instagram',
@@ -54,7 +57,7 @@ export default {
                     }
                 ]
             },
-            SupportLink: {
+            SupportLinks: {
                 title: 'Support',
                 links: [
                     {
@@ -90,22 +93,21 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="box">
         <TopFooterBookings :contacts="bookingsContacts" />
-        <TopFooterLinks />
-        <TopFooterLinks />
+        <TopFooterLinks :footerLinks="InformationLinks" />
+        <TopFooterLinks :footerLinks="SupportLinks" />
         <TopFooterNewstletter />
 
     </div>
 
 </template>
 
-<style scoped>
-.container {
+<style lang="scss" scoped>
+.box {
     color: white;
     background-color: black;
     display: flex;
     justify-content: space-around;
-    gap: 2rem;
 }
 </style>
