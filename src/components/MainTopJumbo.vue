@@ -29,7 +29,11 @@ export default {
     getImgPaths: function(imgPath){
         return new URL(imgPath, import.meta.url).href;
     }
-  }
+  },
+
+//   created(){
+//     setInterval(this.changeImg, 2000)
+//   }
 }
 </script>
 
@@ -39,8 +43,8 @@ export default {
         <button class="slide-btn left" @click="changeImg"> < </button>
             <div class="centered">
                 <h2>Instrumental Rock</h2>
-                <h1>Music in this video</h1>
-                <h1>Music of the spirit</h1>
+                <h1 v-if="this.activeIndex === 0">Music in this video</h1>
+                <h1 v-else="this.activeIndex === 1">Music of the spirit</h1>
                 <ReadMoreBtn :style="{ fontSize: 14 + 'px' }"/>
             </div>
             <button class="slide-btn right" @click="changeImg"> > </button>
