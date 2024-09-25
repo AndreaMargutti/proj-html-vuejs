@@ -3,6 +3,7 @@ import AppMainSenseTheJazz from "./AppMainSenseTheJazz.vue";
 import ReadMoreBtn from "./ReadMoreBtn.vue";
 import AppMainInstrumentalRock from "./AppMainInstrumentalRock.vue";
 import AppMainCounter from "./AppMainCounter.vue";
+import MainTop from "./MainTop.vue"
 export default {
   data() {
     return {};
@@ -12,13 +13,13 @@ export default {
     ReadMoreBtn,
     AppMainInstrumentalRock,
     AppMainCounter,
+    MainTop,
   },
 };
 </script>
 
 <template>
-  <h1>AppMain</h1>
-
+  <MainTop />
   <AppMainSenseTheJazz />
   <AppMainInstrumentalRock />
   <AppMainCounter />
