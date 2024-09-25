@@ -21,7 +21,7 @@ export default {
 <template>
     <section id="jumbo">
         <img src="../assets/img/image.png" alt="">
-            <button class="slide-btn left"> < </button>
+        <button class="slide-btn left"> < </button>
             <div class="centered">
                 <h2>Instrumental Rock</h2>
                 <h1>Music in this video</h1>
@@ -40,12 +40,12 @@ export default {
         }
         min-height: 50rem;
         position: relative;
-        
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         text-transform: uppercase;
+        text-align: center;
         //Inizio stile h3
         h2 {
             color: #F2870C;
