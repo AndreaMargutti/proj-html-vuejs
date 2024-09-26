@@ -4,23 +4,23 @@ import MainTopCard from "./MainTopCard.vue";
 export default {
   data() {
     return {
-      cardsInfo: {
-        speakerCard: {
+      cardsInfo: [
+        {
             title: "Original Ideas",
             text: "Contrary popular belief, Lorem Ipsum not simply ipsum random text.",
             icon: "../assets/img/image (10).svg"
-        },
-        discCard: {
+      },
+      {
           title: "Music Studio",
           text: "Contrary popular belief, Lorem Ipsum not simply ipsum random text.",
           icon: "../assets/img/image (11).svg"
-        },
-        headsetCard: {
-          title: "Acoustic Cover",
+      },
+      {
+          title: "Acoustic Covers",
           text: "Contrary popular belief, Lorem Ipsum not simply ipsum random text.",
           icon: "../assets/img/image (12).svg"
-        }
       }
+      ]
     }
   },
   components: {

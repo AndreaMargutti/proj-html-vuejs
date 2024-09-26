@@ -8,19 +8,25 @@ export default {
 
   props: {
     cardInfo: {
-      type: Object,
+      type: Array,
       required: true
   }
+},
+
+methods: {
+  getImgPaths: function(imgPath){
+        return new URL(imgPath, import.meta.url).href;
+    }
 }
 }
 </script>
 
 <template>
-  <div class="card text-center w-25">
-  <img src="../assets/img/image (10).svg" class="card-img-top" alt="...">
+<div class="card text-center w-25" v-for="(card, i) in cardInfo" :key="i">
   <div class="card-body">
-    <h5 class="card-title">Original Ideas</h5>
-    <p class="card-text">Contrary popular belief, Lorem Ipsum not simply ipsum random text.</p>
+    <img :src="getImgPaths(card.icon)" class="card-img-top">
+    <h5 class="card-title">{{ card.title }}</h5>
+    <p class="card-text">{{ card.text }}</p>
   </div>
 </div>
 </template>
