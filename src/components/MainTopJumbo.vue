@@ -117,4 +117,15 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 </style>
