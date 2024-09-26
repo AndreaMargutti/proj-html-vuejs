@@ -8,17 +8,15 @@ export default {
     cardInfo:{
         type: Object,
         required:true
-
     }
-
   },
   methods:{
-    getImgBlogPath(simplePath){
-      const blogPath = new URL( simplePath, import.meta.url).href;
-      console.log(simplePath,'path');
-      return blogPath;
+        getImgBlogPath(simplePath){
+        const blogPath = new URL( simplePath, import.meta.url).href;
+        console.log(simplePath,'path');
+        return blogPath;
+        }
     }
-  }
 }
 </script>
 
@@ -60,7 +58,6 @@ export default {
                 height: auto;
             }
         }
-
         a{
             text-decoration: none;
             color: white;

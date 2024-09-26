@@ -28,6 +28,7 @@ export default {
   background-color: black;
   color: #f2870c;
   height: 1000px;
+  position: relative;
 
   h4{
     text-align: center;
@@ -38,5 +39,6 @@ export default {
     text-align: center;
     font-size: 3.5rem;
   }
+
 }
 </style>
