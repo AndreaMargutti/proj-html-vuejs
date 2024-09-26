@@ -46,6 +46,10 @@ export default {
   img {
     filter: invert(100%);
     height: 95px;
+    &:hover {
+      filter: invert(100%) sepia(1) saturate(1000%) hue-rotate(-10deg)
+        brightness(0.8);
+    }
   }
 }
 .card-body {
