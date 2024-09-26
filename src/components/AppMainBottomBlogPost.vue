@@ -86,13 +86,7 @@ export default {
       }
     }
 
-  },
-  created(){
-    const intervalId = setInterval(() => {
-      this.toNextBox();
-    }, 2000);
-  }
- 
+  }, 
 }
 </script>
 

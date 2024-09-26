@@ -13,7 +13,6 @@ export default {
   methods:{
         getImgBlogPath(simplePath){
         const blogPath = new URL( simplePath, import.meta.url).href;
-        console.log(simplePath,'path');
         return blogPath;
         }
     }
