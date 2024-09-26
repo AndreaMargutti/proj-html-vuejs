@@ -1,18 +1,14 @@
-/* CSS Reset */
 * {
-    box-sizing: border-box;
+    font-family: 'Oswald', Times, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* Generics */
 
 a {
     text-decoration: none;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 button {

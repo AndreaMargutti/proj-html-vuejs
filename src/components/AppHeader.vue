@@ -97,34 +97,7 @@ export default {
 </script>
 
 <template>
-	<header>
-		<img src="../assets/img/Logo.png" alt="Logo">
-		<Navbar :list="list" />
-	</header>
+	<h1>AppHeader</h1>
 </template>
 
-<style scoped>
-* {
-	margin: 0;
-	padding: 0;
-}
-
-header {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: center;
-	height: 100px;
-	background-color: #000;
-	padding: 0 2rem;
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
-img {
-	height: 35px;
-}
-</style>
+<style scoped></style>
