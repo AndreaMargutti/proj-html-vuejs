@@ -29,9 +29,8 @@ export default {
 
 <style lang="scss" scoped>
 section {
-    min-height: 50rem;
     background-color: #000000;
-    padding-top: 300px;
+    padding: 300px 0;
     text-align: center;
 }
 h6 {
