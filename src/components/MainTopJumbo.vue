@@ -26,11 +26,11 @@ export default {
 
     getImgPaths: function (imgPath) {
       return new URL(imgPath, import.meta.url).href;
-    }
+    },
   },
 
   created() {
-    setInterval(this.changeImg, 3500);
+    setInterval(this.changeImg, 4000);
   },
 };
 </script>
@@ -38,8 +38,9 @@ export default {
 <template>
   <section id="jumbo">
     <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="" />
-    <button class="slide-btn left" @click="changeImg"><i
-      class="fa-solid fa-angle-left"></i></button>
+    <button class="slide-btn left" @click="changeImg">
+      <i class="fa-solid fa-angle-left"></i>
+    </button>
     <div class="centered">
       <h2 v-if="this.activeIndex === 0">Instrumental Rock</h2>
       <h2 v-else="this.activeIndex === 1">Instrumental Rock</h2>
@@ -47,8 +48,9 @@ export default {
       <h1 v-else="this.activeIndex === 1">Music of the spirit</h1>
       <ReadMoreBtn :text="buttonText" />
     </div>
-    <button class="slide-btn right" @click="changeImg"><i
-      class="fa-solid fa-angle-right"></i></button>
+    <button class="slide-btn right" @click="changeImg">
+      <i class="fa-solid fa-angle-right"></i>
+    </button>
   </section>
 </template>
 
