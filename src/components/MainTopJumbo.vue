@@ -37,15 +37,18 @@ export default {
 
 <template>
   <section id="jumbo">
-    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="image-jumbo"/>
-    <button class="slide-btn left" @click="changeImg"><</button>
+    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="" />
+    <button class="slide-btn left" @click="changeImg"><i
+      class="fa-solid fa-angle-left"></i></button>
     <div class="centered">
-      <h2>Instrumental Rock</h2>
+      <h2 v-if="this.activeIndex === 0">Instrumental Rock</h2>
+      <h2 v-else="this.activeIndex === 1">Instrumental Rock</h2>
       <h1 v-if="this.activeIndex === 0">Music in this video</h1>
       <h1 v-else="this.activeIndex === 1">Music of the spirit</h1>
       <ReadMoreBtn :text="buttonText" />
     </div>
-    <button class="slide-btn right" @click="changeImg">></button>
+    <button class="slide-btn right" @click="changeImg"><i
+      class="fa-solid fa-angle-right"></i></button>
   </section>
 </template>
 
@@ -68,12 +71,14 @@ export default {
   h2 {
     color: #f2870c;
     font-size: 2rem;
+    animation: fadeIn 1s;
   }
   //Inizio stile h1
   h1 {
     color: #ffffff;
     font-size: 4rem;
     margin: 40px 0px 20px 0px;
+    animation: fadeIn 1s;
   }
   //bottoni
   .slide-btn {
@@ -82,12 +87,22 @@ export default {
     top: 50%;
     //stile dei bottoni
     color: #ffffff;
-    padding: 20px;
+    padding: 10px 15px;
     margin: 0 10px;
     background-color: #000000;
     opacity: 0.5;
     border: none;
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0px 0px 2px #777;
+    }
   }
+
+  &:hover .slide-btn {
+    display: block;
+  }
+
   .left {
     left: 0;
   }
@@ -103,7 +118,14 @@ export default {
   transform: translate(-50%, -50%);
 }
 
-#jumbo:hover .slide-btn{
-  display: inline-block;
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 </style>
