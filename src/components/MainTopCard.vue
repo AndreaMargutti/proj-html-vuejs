@@ -12,7 +12,7 @@ export default {
   <div class="card text-center w-25">
   <img src="../assets/img/image (10).svg" class="card-img-top" alt="...">
   <div class="card-body">
-    <h5 class="card-title">Original Ideas </h5>
+    <h5 class="card-title">Original Ideas</h5>
     <p class="card-text">Contrary popular belief, Lorem Ipsum not simply ipsum random text.</p>
   </div>
 </div>
