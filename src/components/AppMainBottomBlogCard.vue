@@ -51,11 +51,17 @@ export default {
 
         .box-img-blog{
             height: 300px;
+            overflow: hidden;
 
             img{
                 width: 100%;
                 height: auto;
+                transition: transform 0.4s;
             }
+            img:hover{
+                transform: scale(1.05);
+            }
+           
         }
         a{
             text-decoration: none;
@@ -73,5 +79,4 @@ export default {
     }
 
 }
-
 </style>
