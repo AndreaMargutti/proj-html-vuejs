@@ -26,7 +26,7 @@ export default {
 
     getImgPaths: function (imgPath) {
       return new URL(imgPath, import.meta.url).href;
-    },
+    }
   },
 
   created() {
@@ -110,22 +110,11 @@ export default {
     right: 0;
   }
 }
+
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
-
-// fadeIn Animation
-@keyframes fadeIn {
-     0% {
-          opacity: 0;
-          transform: scale(0.75);
-     }
-     100% {
-          opacity: 1;
-          transform: scale(1);
-     }
 }
 </style>
