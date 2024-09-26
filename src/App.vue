@@ -3,18 +3,21 @@ import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 import AppFooter from "./components/AppFooter.vue";
 import ScrollTopButton from "./components/ScrollTopButton.vue";
+import OverlayWindow from "./components/OverlayWindow.vue";
 
 export default {
     data() {
         return {
             scrolledPx: 0,
+            showSearchBar: false,
         }
     },
     components: {
         AppHeader,
         AppMain,
         AppFooter,
-        ScrollTopButton
+        ScrollTopButton,
+        OverlayWindow
     },
     methods: {
         scrollToTop() {
@@ -34,7 +37,7 @@ export default {
 
 <template>
     <!-- Main Header -->
-    <AppHeader />
+    <AppHeader @openSearchBar="showSearchBar = true" />
     <!-- Main -->
     <AppMain />
     <!-- Main Footer -->
@@ -43,6 +46,7 @@ export default {
     <Transition>
         <ScrollTopButton @scrollToTop="scrollToTop" v-show="scrolledPx > 200" />
     </Transition>
+    <OverlayWindow v-if="showSearchBar" @closeOverlay="this.showSearchBar = false" />
 </template>
 
 <style lang="scss">

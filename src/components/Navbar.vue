@@ -55,7 +55,7 @@ export default {
       width: 250px;
       background-color: #1f1f1f;
       position: absolute;
-      top: 100px;
+      top: 50px;
       list-style: none;
 
       li {

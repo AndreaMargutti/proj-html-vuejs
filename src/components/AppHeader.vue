@@ -1,10 +1,12 @@
 <script>
 import Navbar from "./Navbar.vue";
+import HeaderSearch from "./HeaderSearch.vue";
 
 export default {
   name: "AppHeader",
   components: {
     Navbar,
+    HeaderSearch,
   },
   data: () => ({
     // Struttura dati
@@ -83,6 +85,11 @@ export default {
       },
     ],
   }),
+  methods: {
+    openSearchBar() {
+      this.$emit('openSearchBar');
+    }
+  }
 };
 </script>
 
@@ -91,7 +98,10 @@ export default {
   <header>
     <a href="#"><img src="../assets/img/Logo.png" alt="Lyricsmus" /></a>
     <!-- Navbar -->
-    <Navbar :list="pagesList" />
+    <nav class="d-flex align-items-center">
+      <Navbar :list="pagesList" />
+      <HeaderSearch @openSearchBar="openSearchBar()" />
+    </nav>
   </header>
 </template>
 
@@ -111,6 +121,10 @@ header {
   left: 0;
   right: 0;
   z-index: 2;
+
+  nav {
+    gap: 2rem;
+  }
 
   img {
     display: block;
