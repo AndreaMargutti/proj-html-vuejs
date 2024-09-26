@@ -127,11 +127,13 @@ $white: white;
     margin: 10px 0;
   }
 
-  i {
+  .stream-on i {
     color: $white;
+    display: inline-block; // Aggiunto
+    transition: color 0.3s ease; // Aggiunto
 
     &:hover {
-      color: $orange;
+      color: #f2870c;
     }
   }
 }

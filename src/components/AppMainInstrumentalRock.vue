@@ -3,7 +3,7 @@ import ReadMoreBtn from "./ReadMoreBtn.vue";
 
 export default {
   data() {
-    return {};
+    return { buttonText: "READ MORE" };
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
@@ -27,7 +27,7 @@ export default {
     <div class="content flex-column">
       <h6>INSTRUMENTAL ROCK</h6>
       <h2>ALBUM OUT NOW</h2>
-      <ReadMoreBtn />
+      <ReadMoreBtn :text="buttonText" />
     </div>
   </div>
 </template>

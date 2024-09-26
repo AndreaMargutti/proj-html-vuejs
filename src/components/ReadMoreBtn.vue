@@ -3,11 +3,17 @@ export default {
   data() {
     return {};
   },
+  props: {
+    text: {
+      type: String,
+      required: true
+    }
+  }
 };
 </script>
 
 <template>
-  <button><strong>READ MORE</strong></button>
+  <button><strong>{{ text }}</strong></button>
 </template>
 
 <style scoped>
@@ -19,6 +25,7 @@ button {
   transition-property: background-color;
   /* Ritarda l'applicazione del background-color in :hover */
   transition-duration: 0.5s;
+
   &:hover {
     background-color: #f2870c;
   }
