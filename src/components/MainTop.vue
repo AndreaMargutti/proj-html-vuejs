@@ -4,7 +4,9 @@ import MainTopCard from "./MainTopCard.vue";
 export default {
   data() {
     return {
-      
+      cardsInfo: {
+        
+      }
     }
   },
   components: {
@@ -19,5 +21,5 @@ export default {
     <MainTopCard />
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 </style>
