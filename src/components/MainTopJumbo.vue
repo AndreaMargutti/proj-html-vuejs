@@ -77,6 +77,7 @@ export default {
   }
   //bottoni
   .slide-btn {
+    display: none;
     position: absolute;
     top: 50%;
     //stile dei bottoni
@@ -94,10 +95,15 @@ export default {
     right: 0;
   }
 }
+
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#jumbo:hover .slide-btn{
+  display: inline-block;
 }
 </style>
