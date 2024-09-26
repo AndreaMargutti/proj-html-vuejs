@@ -22,13 +22,15 @@ methods: {
 </script>
 
 <template>
-<div class="card text-center w-25" v-for="(card, i) in cardInfo" :key="i">
-  <div class="card-body">
-    <img :src="getImgPaths(card.icon)" class="card-img-top">
-    <h5 class="card-title">{{ card.title }}</h5>
-    <p class="card-text">{{ card.text }}</p>
-  </div>
-</div>
+  <section>
+    <div class="card text-center w-100" v-for="(card, i) in cardInfo" :key="i">
+      <div class="card-body">
+        <img :src="getImgPaths(card.icon)" class="card-img-top">
+        <h2 class="card-title">{{ card.title }}</h2>
+        <p class="card-text">{{ card.text }}</p>
+      </div>
+    </div>
+  </section>
 </template>
 
 <style lang="scss" scoped>
@@ -41,5 +43,25 @@ methods: {
     filter: invert(100%);
     height: 200px;
   }
+}
+.card-body {
+  * {
+    margin-bottom: 40px;
+  }
+  .card-title {
+    text-transform: uppercase;
+  }
+  .card-text {
+    font-weight: 100;
+    font-size: 1.3rem;
+  }
+}
+
+section {
+  display: flex;
+  max-width: 75%;
+  margin: 0 auto;
+  position: relative;
+  top: -10rem;
 }
 </style>
