@@ -26,7 +26,7 @@ export default {
 
     getImgPaths: function (imgPath) {
       return new URL(imgPath, import.meta.url).href;
-    },
+    }
   },
 
   created() {
@@ -37,7 +37,7 @@ export default {
 
 <template>
   <section id="jumbo">
-    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="" />
+    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="image-jumbo"/>
     <button class="slide-btn left" @click="changeImg"><</button>
     <div class="centered">
       <h2>Instrumental Rock</h2>

@@ -22,36 +22,56 @@ export default {
 <template>
   <div id="container">
     <section>
-      <div
-        class="card text-center w-100"
+      <div class="card text-center w-100"
         v-for="(card, i) in cardInfo"
-        :key="i"
-      >
-        <div class="card-body">
+        :key="i">
+        <div class="blob">
           <img :src="getImgPaths(card.icon)" class="card-img-top" />
+        </div>
           <h2 class="card-title">{{ card.title }}</h2>
           <p class="card-text">{{ card.text }}</p>
-        </div>
       </div>
     </section>
   </div>
 </template>
 
 <style lang="scss" scoped>
+//Definizione valori
+
 .card {
   background-color: #121212;
   color: #ffffff;
   border-radius: 0;
   padding: 30px;
+  min-height: 18rem;
   img {
     filter: invert(100%);
     height: 95px;
+    width: max-content;
     &:hover {
-      filter: invert(100%) sepia(1) saturate(1000%) hue-rotate(-10deg)
-        brightness(0.8);
+      filter: brightness(0) saturate(100%) invert(58%) sepia(63%) saturate(2224%) hue-rotate(357deg) brightness(97%) contrast(95%);
     }
   }
 }
+
+.blob {
+  border-radius: 50%;
+  width: max-content;
+  margin: 20px auto;
+  box-shadow: 0 0 #f2870c;
+}
+
+.card:hover {
+  .blob {
+  animation: pulse 2s infinite
+  }
+  @keyframes pulse {
+  100% {
+    box-shadow: 0 0 50px 10px #f2870c;
+    }
+  }
+}
+
 .card-body {
   .card-title {
     text-transform: uppercase;
