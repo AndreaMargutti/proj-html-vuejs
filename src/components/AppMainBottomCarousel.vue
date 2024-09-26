@@ -3,7 +3,7 @@
 const startIndex = 10;
 // stabilisco come minimo,l'indice iniziale della prima copia dell'array
 const minIndex = 0;
-//stabilisco come max, l'indice iniziale della terza copia dell'array 
+//stabilisco come max, l'indice iniziale della terza copia dell'array
 const maxIndex = 20;
 
 // in millisecondi
@@ -15,25 +15,25 @@ let intervalId = null;
 export default {
   data() {
     return {
-      imgCarousel:[
-        {path:'../assets/img/instagram_img1.jpg', label:'instagram-img1'},
-        {path:'../assets/img/instagram_img2.jpg', label:'instagram-img2'},
-        {path:'../assets/img/instagram_img3.jpg', label:'instagram-img3'},
-        {path:'../assets/img/instagram_img4.jpg', label:'instagram-img4'},
-        {path:'../assets/img/instagram_img5.jpg', label:'instagram-img5'},
-        {path:'../assets/img/instagram_img6.jpg', label:'instagram-img6'},
-        {path:'../assets/img/instagram_img7.jpg', label:'instagram-img7'},
-        {path:'../assets/img/instagram_img8.jpg', label:'instagram-img8'},
-        {path:'../assets/img/instagram_img9.jpg', label:'instagram-img9'},
-        {path:'../assets/img/instagram_img10.jpg', label:'instagram-img10'},
+      imgCarousel: [
+        { path: "../assets/img/instagram_img1.jpg", label: "instagram-img1" },
+        { path: "../assets/img/instagram_img2.jpg", label: "instagram-img2" },
+        { path: "../assets/img/instagram_img3.jpg", label: "instagram-img3" },
+        { path: "../assets/img/instagram_img4.jpg", label: "instagram-img4" },
+        { path: "../assets/img/instagram_img5.jpg", label: "instagram-img5" },
+        { path: "../assets/img/instagram_img6.jpg", label: "instagram-img6" },
+        { path: "../assets/img/instagram_img7.jpg", label: "instagram-img7" },
+        { path: "../assets/img/instagram_img8.jpg", label: "instagram-img8" },
+        { path: "../assets/img/instagram_img9.jpg", label: "instagram-img9" },
+        { path: "../assets/img/instagram_img10.jpg", label: "instagram-img10" },
       ],
       currentIndex: startIndex,
-    }
+    };
   },
-  methods:{
+  methods: {
     // mi creo una funzione per creare il path delle immagini
-    getImgCarousel(rawPath){
-      const imgPath = new URL( rawPath, import.meta.url).href;
+    getImgCarousel(rawPath) {
+      const imgPath = new URL(rawPath, import.meta.url).href;
       return imgPath;
     },
     // vado a gestire lo slide che scorre a destra
@@ -44,7 +44,6 @@ export default {
       if (this.currentIndex > maxIndex) {
         this.currentIndex = startIndex + 1;
       }
-      console.log("arrowRight", this.currentIndex);
     },
     // vado a gestire lo slide che scorre a sinistra
     toPreviousBox() {
@@ -57,72 +56,69 @@ export default {
     // vado a clonare il mio array di img in modo da poter
     // scorrere diverse immagini continuamente nel carousel
     getImageCarousel() {
-      return [
-        ...this.imgCarousel,
-        ...this.imgCarousel,
-        ...this.imgCarousel
-      ]
+      return [...this.imgCarousel, ...this.imgCarousel, ...this.imgCarousel];
     },
     getPositionLeft() {
       // vado a calcolare le misure dello schermo
       const windowSize = document.querySelector("body").offsetWidth;
       // creo la variabile del numero di box img visibili in pagina
       const boxesPerPage = 8;
-      // mi calcolo la width delle box  in base alla width 
+      // mi calcolo la width delle box  in base alla width
       // dello schermo e arrotodono per eccesso
       const boxWidth = Math.ceil(windowSize / boxesPerPage);
-      return `-${boxWidth * this.currentIndex}px`; 
+      return `-${boxWidth * this.currentIndex}px`;
     },
     // devo gestirmi i comandi della freccia a destra e freccia a sinistra nella tastiera
     handleKeystroke(keyStrokeEvent) {
       console.log("keystroke", keyStrokeEvent);
 
-      if (keyStrokeEvent.code === 'ArrowRight') {
+      if (keyStrokeEvent.code === "ArrowRight") {
         this.toNextBox();
         // devo resettare intervallo
         this.restartInterval();
-      } else if (keyStrokeEvent.code === 'ArrowLeft') {
+      } else if (keyStrokeEvent.code === "ArrowLeft") {
         this.toPreviousBox();
         this.restartInterval();
       }
-
     },
     restartInterval() {
       clearInterval(intervalId);
       intervalId = setInterval(() => {
         this.toNextBox();
       }, autoIncrementDuration);
-    }
+    },
   },
-  created(){
+  created() {
     this.restartInterval();
-    window.addEventListener('keydown', this.handleKeystroke);
+    window.addEventListener("keydown", this.handleKeystroke);
   },
-  unmounted(){
+  unmounted() {
     clearInterval(intervalId);
     // per evitare conflitti rimuovere alla fine
-    window.removeEventListener('keydown', this.handleKeystroke);
-  }
-}
+    window.removeEventListener("keydown", this.handleKeystroke);
+  },
+};
 </script>
 
 <template>
   <!-- provo inizialmente con gli eventi al click per scorrere a destra e a sinistra -->
-  <div class="main-carousel" @keydown.right="toNextBox" @keydown.left="toPreviousBox">
-
-    <div class="box" 
-       v-for="(itemCarousel, index) in getImageCarousel()" 
-       :key="index" 
-       :style="{ left: getPositionLeft()}" 
-       >
-      <img :src="getImgCarousel(itemCarousel.path)" :alt="itemCarousel.label">
+  <div
+    class="main-carousel"
+    @keydown.right="toNextBox"
+    @keydown.left="toPreviousBox"
+  >
+    <div
+      class="box"
+      v-for="(itemCarousel, index) in getImageCarousel()"
+      :key="index"
+      :style="{ left: getPositionLeft() }"
+    >
+      <img :src="getImgCarousel(itemCarousel.path)" :alt="itemCarousel.label" />
     </div>
-
   </div>
 </template>
 
 <style lang="scss" scoped>
-
 // nell'ipotesi che il carousel abbia design vada da una estremità all'altra
 // dello schermo e che le box delle immagini siano quadrate
 // l'altezza dei box sarà la stessa della larghezza ovvero 100vw/numero dei box
@@ -131,17 +127,17 @@ export default {
 $boxes_per_page: 8;
 $height: calc(100vw / $boxes_per_page);
 
-.main-carousel{
+.main-carousel {
   height: $height;
   overflow: hidden;
   white-space: nowrap;
-  .box{
-  height:$height;
-  width: calc(100% / $boxes_per_page);
-  position: relative;
-  transition: all .5s ease-in-out;
-  display: inline-block;
-    img{
+  .box {
+    height: $height;
+    width: calc(100% / $boxes_per_page);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    display: inline-block;
+    img {
       width: 100%;
       height: auto;
     }
