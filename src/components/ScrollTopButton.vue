@@ -1,5 +1,4 @@
 <script>
-import App from '../App.vue';
 
 export default {
     data() {
@@ -16,7 +15,7 @@ export default {
 </script>
 
 <template>
-    <div class="button" id="scrollButton" @click="scrollToTop()">
+    <div class="button" @click="scrollToTop()">
         <img src="../assets/img/image (21).svg" alt="Scroll Top">
     </div>
 </template>

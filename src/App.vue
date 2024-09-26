@@ -5,7 +5,11 @@ import AppFooter from "./components/AppFooter.vue";
 import ScrollTopButton from "./components/ScrollTopButton.vue";
 
 export default {
-    name: "App",
+    data() {
+        return {
+            scrolledPx: 0,
+        }
+    },
     components: {
         AppHeader,
         AppMain,
@@ -15,7 +19,15 @@ export default {
     methods: {
         scrollToTop() {
             window.scrollTo(0, 0);
+        },
+        handleScroll() {
+            console.log('gestico lo scroll');
+            this.scrolledPx = window.scrollY;
+
         }
+    },
+    created() {
+        window.addEventListener('scroll', this.handleScroll)
     }
 }
 </script>
@@ -28,10 +40,22 @@ export default {
     <!-- Main Footer -->
     <AppFooter />
     <!-- Scroll to Top Button-->
-    <ScrollTopButton @scrollToTop="scrollToTop" />
+    <Transition>
+        <ScrollTopButton @scrollToTop="scrollToTop" v-show="scrolledPx > 200" />
+    </Transition>
 </template>
 
 <style lang="scss">
-@use "./style/general.scss";
 @use "bootstrap/scss/bootstrap.scss";
+@use "./style/general.scss";
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
 </style>
