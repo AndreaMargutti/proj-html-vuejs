@@ -2,8 +2,9 @@
 import AppMainBottomBlogCard from './AppMainBottomBlogCard.vue';
 // stabilisco inizio per lo scorrimento al primo elemento array
 const startIndexBlog = 0;
-const maxIndexBlog= 6;
+const maxIndexBlog= 6 - 3 + 1;
 const minIndexBlog = 0;
+
 export default {
   data() {
     return {
@@ -74,27 +75,36 @@ export default {
   },
   methods:{
     nextCard(){
-      this.currentIndex++;
-      if (this.currentIndex > maxIndexBlog) {
-        this.currentIndex = startIndexBlog + 1;
+      if (this.currentIndexBlog < maxIndexBlog) {
+        this.currentIndexBlog++;
       }
+      console.log('next blog post',this.currentIndexBlog);
     },
     previousCard(){
-      this.currentIndex--;
-      if (this.currentIndex < minIndexBlog) {
-        this.currentIndex = startIndexBlog - 1;
+      if (this.currentIndexBlog > minIndexBlog) {
+        this.currentIndexBlog--;
       }
-    }
+      console.log('prev blog post',this.currentIndexBlog);
 
+    }, 
   }, 
 }
 </script>
 
 <template>
   <div class="row-blog">
+    <!-- vedo solo 3 card alla volta -->
     <AppMainBottomBlogCard 
-    v-for="(cardItem,index) in infoCardsBlog" :key="index"
-    :cardInfo = "cardItem"/>
+    v-for="(cardItem,index) in 3" :key="index"
+    :cardInfo = "infoCardsBlog[currentIndexBlog + index]"/>
+  </div>
+  <div class="button-slide">
+    <button class="slide-left" @click="previousCard">
+      <i class="fa-solid fa-arrow-left"></i>
+    </button>
+    <button class="slide-right" @click="nextCard">
+      <i class="fa-solid fa-arrow-right"></i>
+    </button>
   </div>
 </template>
 
@@ -103,5 +113,20 @@ export default {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
+}
+.button-slide{
+  text-align: center;
+
+  .slide-left{
+    margin-right: 20px;
+    background-color: #f2870c;
+
+  }
+  .slide-right{
+    margin-right: 20px;
+    background-color: #f2870c;
+  }
+
+
 }
 </style>
