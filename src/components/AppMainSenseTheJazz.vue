@@ -127,8 +127,8 @@ $white: white;
     margin: 10px 0;
   }
 
-  .stream-on i {
-    color: $white;
+  .svg-inline--fa {
+    color: white;
     display: inline-block; // Aggiunto
     transition: color 0.3s ease; // Aggiunto
 

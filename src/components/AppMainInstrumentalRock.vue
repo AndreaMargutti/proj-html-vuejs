@@ -13,10 +13,13 @@ export default {
   },
   methods: {
     handleScroll() {
-      const scrollPosition = window.scrollY;
-      const parallaxDiv = this.$el.querySelector(".instrumental-rock");
+    const scrollPosition = window.scrollY;
+    const parallaxDiv = this.$el.querySelector(".instrumental-rock");
+    
+    if (parallaxDiv) {
       parallaxDiv.style.backgroundPosition = `center ${scrollPosition * 0.5}px`;
-    },
+    }
+  }
   },
   components: { ReadMoreBtn },
 };
