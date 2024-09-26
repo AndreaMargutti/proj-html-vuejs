@@ -2,7 +2,7 @@
 export default {
   data() {
     return {
-      
+
     }
   }
 }
@@ -12,5 +12,4 @@ export default {
   <h1>AppMain</h1>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
