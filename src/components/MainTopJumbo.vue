@@ -38,7 +38,8 @@ export default {
 <template>
   <section id="jumbo">
     <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="" />
-    <button class="slide-btn left" @click="changeImg"><</button>
+    <button class="slide-btn left" @click="changeImg"><i
+      class="fa-solid fa-angle-left"></i></button>
     <div class="centered">
       <h2 v-if="this.activeIndex === 0">Instrumental Rock</h2>
       <h2 v-else="this.activeIndex === 1">Instrumental Rock</h2>
@@ -46,7 +47,8 @@ export default {
       <h1 v-else="this.activeIndex === 1">Music of the spirit</h1>
       <ReadMoreBtn :text="buttonText" />
     </div>
-    <button class="slide-btn right" @click="changeImg">></button>
+    <button class="slide-btn right" @click="changeImg"><i
+      class="fa-solid fa-angle-right"></i></button>
   </section>
 </template>
 
@@ -80,16 +82,27 @@ export default {
   }
   //bottoni
   .slide-btn {
+    display: none;
     position: absolute;
     top: 50%;
     //stile dei bottoni
     color: #ffffff;
-    padding: 20px;
+    padding: 10px 15px;
     margin: 0 10px;
     background-color: #000000;
     opacity: 0.5;
     border: none;
+
+    &:hover {
+      opacity: 1;
+      box-shadow: 0px 0px 2px #777;
+    }
   }
+
+  &:hover .slide-btn {
+    display: block;
+  }
+
   .left {
     left: 0;
   }
