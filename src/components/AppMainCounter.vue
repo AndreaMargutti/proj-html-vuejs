@@ -47,7 +47,6 @@ export default {
       <span id="card-text">{{ card.text }}</span>
     </section>
   </div>
-  `,
 </template>
 
 <style lang="scss" scoped>
@@ -77,8 +76,7 @@ export default {
     filter: invert(100%) brightness(2);
 
     &:hover {
-      filter: invert(54%) sepia(83%) saturate(537%) hue-rotate(337deg)
-        brightness(102%) contrast(101%);
+      filter: invert(54%) sepia(83%) saturate(537%) hue-rotate(337deg) brightness(102%) contrast(101%);
     }
   }
 }
