@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .col-blog{
-    width: calc(100% / 7);
+    width: calc(100% / 3);
 
     .card{
         height: 500px;
