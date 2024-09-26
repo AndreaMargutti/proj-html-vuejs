@@ -7,33 +7,76 @@ export default {
           img: "image (13).svg",
           number: 900,
           text: "CONCERTS",
-          currentNumber: 900,
+          currentNumber: 0,
         },
         {
           img: "image (14).svg",
           number: 800,
           text: "HAPPY CLIENTS",
-          currentNumber: 800,
+          currentNumber: 0,
         },
         {
           img: "image (15).svg",
           number: 400,
           text: "MUSIC AWARDS",
-          currentNumber: 400,
+          currentNumber: 0,
         },
         {
           img: "image (16).svg",
           number: 1001,
           text: "TOTAL SONGS",
-          currentNumber: 1001,
+          currentNumber: 0,
         },
       ],
     };
   },
-
+  mounted() {
+    this.cards.forEach((card, index) => {
+      this.animateValue(this.$refs.valueRefs[index], 0, card.number, 20000);
+    });
+  },
   methods: {
     getImagePath(image) {
       return new URL(`../assets/img/${image}`, import.meta.url).href;
+    },
+    animateValue(obj, start = 0, end = null, duration = 3000) {
+      if (obj) {
+        // save starting text for later (and as a fallback text if JS not running and/or google)
+        var textStarting = obj.innerHTML;
+
+        // remove non-numeric from starting text if not specified
+        end = end || parseInt(textStarting.replace(/\D/g, ""));
+
+        var range = end - start;
+
+        // no timer shorter than 50ms (not really visible any way)
+        var minTimer = 50;
+
+        // calc step time to show all interediate values
+        var stepTime = Math.abs(Math.floor(duration / range));
+
+        // never go below minTimer
+        stepTime = Math.max(stepTime, minTimer);
+
+        // get current time and calculate desired end time
+        var startTime = new Date().getTime();
+        var endTime = startTime + duration;
+        var timer;
+
+        function run() {
+          var now = new Date().getTime();
+          var remaining = Math.max((endTime - now) / duration, 0);
+          var value = Math.round(end - remaining * range);
+          // replace numeric digits only in the original string
+          obj.innerHTML = textStarting.replace(/([0-9]+)/g, value);
+          if (value == end) {
+            clearInterval(timer);
+          }
+        }
+
+        timer = setInterval(run, stepTime);
+        run();
+      }
     },
   },
 };
@@ -41,11 +84,15 @@ export default {
 
 <template>
   <div class="counter d-flex justify-content-center align-items-center">
-    <section v-for="(card, index) in cards" :key="index" class="card">
+    <div v-for="(card, index) in cards" :key="index" class="card">
       <img :src="getImagePath(card.img)" :alt="card.text" />
-      <span id="card-number">{{ card.currentNumber }}</span>
-      <span id="card-text">{{ card.text }}</span>
-    </section>
+      <div>
+        <p id="card-text">{{ card.text }}</p>
+        <p id="card-number" ref="valueRefs" class="value">
+          {{ card.currentNumber }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -76,7 +123,8 @@ export default {
     filter: invert(100%) brightness(2);
 
     &:hover {
-      filter: invert(54%) sepia(83%) saturate(537%) hue-rotate(337deg) brightness(102%) contrast(101%);
+      filter: invert(54%) sepia(83%) saturate(537%) hue-rotate(337deg)
+        brightness(102%) contrast(101%);
     }
   }
 }
