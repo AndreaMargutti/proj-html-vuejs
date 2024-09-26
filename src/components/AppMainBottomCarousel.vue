@@ -138,9 +138,16 @@ $height: calc(100vw / $boxes_per_page);
   position: relative;
   transition: all .5s ease-in-out;
   display: inline-block;
+  overflow: hidden;
+
     img{
       width: 100%;
       height: auto;
+      transition: transform 0.4s;
+
+    }
+    img:hover{
+      transform: scale(1.05);
     }
   }
 }

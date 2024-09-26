@@ -117,16 +117,10 @@ export default {
 .button-slide{
   text-align: center;
 
-  .slide-left{
+  button{
     margin-right: 20px;
     background-color: #f2870c;
 
   }
-  .slide-right{
-    margin-right: 20px;
-    background-color: #f2870c;
-  }
-
-
 }
 </style>
