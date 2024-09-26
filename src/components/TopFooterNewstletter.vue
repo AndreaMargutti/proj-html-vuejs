@@ -52,11 +52,14 @@ export default {
     border-color: gray;
     background-color: transparent;
     padding: 1rem;
-    color: white; 
+    color: white;
 
     &::placeholder {
       color: gray;
-      opacity: 1; 
+      opacity: 1;
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.25rem gray;
     }
   }
 }
