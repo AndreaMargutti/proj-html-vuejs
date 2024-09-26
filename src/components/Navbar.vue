@@ -17,32 +17,18 @@ export default {
   <!-- Navbar -->
   <nav class="navbar p-0">
     <ul class="navbar-list m-0 h-100">
-      <li
-        class="navbar-list-item h-100"
-        v-for="(item, i) in list"
-        :key="item.id"
-        :class="{ 'shop-item': item.name === 'Shop' }"
-      >
+      <li class="navbar-list-item h-100" v-for="(item, i) in list" :key="item.id"
+        :class="{ 'shop-item': item.name === 'Shop' }">
         <!-- Aggiungi classe "shop-item" -->
 
-        <a
-          v-if="!item.dropList[0]"
-          :href="item.url"
-          :class="{ active: i === currentPage }"
-          v-text="item.name"
-        ></a>
+        <a v-if="!item.dropList[0]" :href="item.url" :class="{ active: i === currentPage }" v-text="item.name"></a>
 
         <div v-else class="drop-menu">
-          <a :href="item.url" :class="{ active: i === currentPage }"
-            >{{ item.name }} <i class="fa-solid fa-angle-down"></i
-          ></a>
+          <a :href="item.url" :class="{ active: i === currentPage }">{{ item.name }} <i
+              class="fa-solid fa-angle-down"></i></a>
 
           <ul class="drop-list m-0 p-0">
-            <li
-              class="drop-list-item"
-              v-for="(dropItem, j) in item.dropList"
-              :key="j"
-            >
+            <li class="drop-list-item" v-for="(dropItem, j) in item.dropList" :key="j">
               <a :href="dropItem.url" v-text="dropItem.name"></a>
             </li>
           </ul>
@@ -101,13 +87,17 @@ export default {
     display: block;
   }
 
-  .navbar-list-item:hover .drop-menu > a {
+  .navbar-list-item:hover .drop-menu>a {
     color: orange;
   }
 
   .navbar-list-item {
     display: flex;
     align-items: center;
+  }
+
+  .navbar-list-item:first-child a:first-child {
+    color: orange;
   }
 
   .shop-item .drop-list {
