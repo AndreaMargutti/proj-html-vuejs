@@ -40,13 +40,15 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+$maincolor:#f2870c;
+$secondarycolor:white;
 .col-blog{
     width: calc(100% / 3);
 
     .card{
         height: 500px;
         background-color: black;
-        color: white;
+        color: $secondarycolor;
         padding: 10px 15px;
 
         .box-img-blog{
@@ -65,10 +67,13 @@ export default {
         }
         a{
             text-decoration: none;
-            color: white;
+            color: $secondarycolor;
+        }
+        a:hover{
+            color:$maincolor;
         }
         .date-blog{
-            color: #f2870c;
+            color: $maincolor;
             padding: 10px 0;
 
             .fa-calendar-days{
