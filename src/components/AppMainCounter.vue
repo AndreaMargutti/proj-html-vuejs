@@ -62,20 +62,20 @@ export default {
     },
     animateValue(obj, start = 0, end = null, duration = 3000) {
       if (obj) {
-        var textStarting = obj.innerHTML;
+        let textStarting = obj.innerHTML;
         end = end || parseInt(textStarting.replace(/\D/g, ""));
-        var range = end - start;
-        var minTimer = 50;
-        var stepTime = Math.abs(Math.floor(duration / range));
+        let range = end - start;
+        let minTimer = 50;
+        let stepTime = Math.abs(Math.floor(duration / range));
         stepTime = Math.max(stepTime, minTimer);
-        var startTime = new Date().getTime();
-        var endTime = startTime + duration;
-        var timer;
+        let startTime = new Date().getTime();
+        let endTime = startTime + duration;
+        let timer;
 
         function run() {
-          var now = new Date().getTime();
-          var remaining = Math.max((endTime - now) / duration, 0);
-          var value = Math.round(end - remaining * range);
+          let now = new Date().getTime();
+          let remaining = Math.max((endTime - now) / duration, 0);
+          let value = Math.round(end - remaining * range);
           obj.innerHTML = textStarting.replace(/([0-9]+)/g, value);
           if (value === end) {
             clearInterval(timer);
