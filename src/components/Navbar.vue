@@ -1,5 +1,6 @@
 <script>
 export default {
+    name: "Navbar",
     props: {
         list: {
             type: Object,
@@ -14,82 +15,83 @@ export default {
 
 <template>
     <!-- Navbar -->
-    <nav class="navbar">
-        <ul class="navbar-list m-0">
-            <li v-for="(item, i) in list" :key="item.id" class="navbar-list-item">
-                <a :class="{ active: i === currentPage }" v-if="!item.sublist[0]" href="#" v-text="item.section"></a>
-                <div v-else class="dropdowns">
-                    <a class="dropdowns" href="#" v-text="item.section">
-                    </a>
-                    <ul class="dropdown-menus">
-                        <li class="" v-for="item in list[i].sublist"><a href="#" v-text="item.name"></a>
-                        </li>
+    <nav class="navbar p-0">
+        <ul class="navbar-list m-0 h-100">
+            <li class="navbar-list-item h-100" v-for="(item, i) in list" :key="item.id">
+                <a v-if="!item.dropList[0]" :href="item.url" :class="{ active: i === currentPage }"
+                    v-text="item.name"></a>
+                <div v-else class="drop-menu">
+                    <a :href="item.url" :class="{ active: i === currentPage }">{{ item.name }} <i
+                            class="fa-solid fa-angle-down"></i></a>
+                    <ul class="drop-list m-0 p-0">
+                        <li class="drop-list-item" v-for="(item, i) in list[i].dropList" :key="i"><a :href="item.url"
+                                v-text="item.name"></a></li>
                     </ul>
                 </div>
             </li>
         </ul>
     </nav>
-
 </template>
 
 <style lang="scss" scoped>
 @use "../style/partials/color-variables.scss" as *;
 @use "../style/partials/mixins.scss" as *;
 
-* {
-    color: white;
-}
-
-.active {
-    color: $primary-color;
-}
-
 .navbar {
     height: 100%;
+
+    .navbar-list {
+        @include flex(row, nowrap);
+        align-items: center;
+        gap: 2rem;
+
+        .drop-list {
+            display: none;
+            width: 250px;
+            background-color: #1F1F1F;
+            position: absolute;
+            top: 100px;
+
+            li {
+                padding: 1rem;
+            }
+
+            li:not(:last-child) {
+                border-bottom: 1px solid #333;
+            }
+        }
+
+        a {
+            color: #FFF;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            .active {
+                color: $primary-color;
+            }
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+.navbar-list-item:hover .drop-list {
+    display: block;
+}
+
+.navbar-list-item:hover .drop-menu>a {
+    color: orange;
+}
+
+.navbar-list-item {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
 }
 
-.navbar-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    list-style-type: none;
-}
-
-li {
-    list-style-type: none;
-}
-
-a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-a:hover {
+ul>li:first-child {
     color: $primary-color;
-}
-
-ul {
-    list-style-type: none;
-}
-
-.dropdown-menus {
-    width: 250px;
-    background-color: #1F1F1F;
-    position: absolute;
-    top: 100px;
-    padding: 0;
-}
-
-.dropdown-menus li {
-    padding: 1rem;
-    border-bottom: 1px solid lightgray;
 }
 </style>

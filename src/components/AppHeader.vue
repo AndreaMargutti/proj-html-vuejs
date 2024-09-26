@@ -2,92 +2,82 @@
 import Navbar from "./Navbar.vue";
 
 export default {
+	name: "AppHeader",
 	components: {
 		Navbar
 	},
 	data: () => ({
 		// Struttura dati
-		list: [
+		pagesList: [
 			{
 				id: 1,
-				section: "Home",
-				href: "#",
-				sublist: []
+				name: "Home",
+				url: "#",
+				dropList: []
 			},
-
 			{
 				id: 2,
-				section: "Blog",
-				href: "#",
-				sublist: []
+				name: "Blog",
+				url: "#",
+				dropList: []
 			},
-
 			{
 				id: 3,
-				section: "Events",
-				href: "#",
-				sublist: [
+				name: "Events",
+				url: "#",
+				dropList: [
 					{
 						name: "Choral Music",
-						href: "#"
+						url: "#"
 					},
-
 					{
 						name: "Concert Band",
-						href: "#"
+						url: "#"
 					},
-
 					{
 						name: "Opera Concerts",
-						href: "#"
+						url: "#"
 					},
-
 					{
 						name: "Symphony Orchestra",
-						href: "#"
+						url: "#"
 					},
-
 					{
 						name: "Family Concerts",
-						href: "#"
+						url: "#"
 					}
 				]
 			},
-
 			{
 				id: 4,
-				section: "Gallery",
-				href: "#",
-				sublist: []
+				name: "Gallery",
+				url: "#",
+				dropList: []
 			},
-
 			{
 				id: 5,
-				section: "About Us",
-				href: "#",
-				sublist: []
+				name: "About Us",
+				url: "#",
+				dropList: []
 			},
-
 			{
 				id: 6,
-				section: "Contact Us",
-				href: "#",
-				sublist: []
+				name: "Contact Us",
+				url: "#",
+				dropList: []
 			},
-
 			{
 				id: 7,
-				section: "Shop",
-				href: "#",
-				sublist: [
+				name: "Shop",
+				url: "#",
+				dropList: [
 					{
 						name: "Product Type",
-						href: "#"
+						url: "#"
 					},
-
 					{
 						name: "Shop Page",
-						href: "#"
+						url: "#"
 					}
 				]
 			}
@@ -97,7 +87,35 @@ export default {
 </script>
 
 <template>
-	<h1>AppHeader</h1>
+	<!-- Header -->
+	<header>
+		<a href="#"><img src="../assets/img/Logo.png" alt="Lyricsmus"></a>
+		<!-- Navbar -->
+		<Navbar :list="pagesList" />
+	</header>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+@use "../style/partials/color-variables" as *;
+@use "../style/partials/mixins" as *;
+
+header {
+	height: 100px;
+	background-color: #000;
+	@include flex(row, nowrap);
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
+	img {
+		display: block;
+		max-width: 100%;
+		height: 35px;
+	}
+}
+</style>
