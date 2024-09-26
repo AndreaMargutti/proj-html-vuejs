@@ -85,9 +85,7 @@ export default {
 <style lang="scss" scoped>
 .row-blog{
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-
+  flex-wrap: nowrap;
 }
 </style>

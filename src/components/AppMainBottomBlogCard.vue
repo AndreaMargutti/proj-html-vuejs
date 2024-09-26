@@ -44,11 +44,10 @@ export default {
 
 <style lang="scss" scoped>
 .col-blog{
-    width: calc(100% / 3 - 10px);
+    width: calc(100% / 7);
 
     .card{
         height: 500px;
-        overflow: hidden;
         background-color: black;
         color: white;
         padding: 10px 15px;
