@@ -16,18 +16,22 @@ export default {
                 socials: [
                     {
                         name: 'instagram',
+                        url: '../assets/img/image (17).svg',
                         link: '#'
                     },
                     {
                         name: 'facebook',
+                        url: '../assets/img/image (18).svg',
                         link: '#'
                     },
                     {
                         name: 'twitter',
+                        url: '../assets/img/image (19).svg',
                         link: '#'
                     },
                     {
                         name: 'youtube',
+                        url: '../assets/img/image (20).svg',
                         link: '#'
                     }
                 ]
@@ -93,12 +97,11 @@ export default {
 </script>
 
 <template>
-    <div class="box">
+    <div class="box d-flex px-4">
         <TopFooterBookings :contacts="bookingsContacts" />
         <TopFooterLinks :footerLinks="InformationLinks" />
         <TopFooterLinks :footerLinks="SupportLinks" />
         <TopFooterNewstletter />
-
     </div>
 
 </template>
@@ -107,7 +110,9 @@ export default {
 .box {
     color: white;
     background-color: black;
-    display: flex;
-    justify-content: space-around;
+    padding-bottom: 8rem;
+    padding-top: 2rem;
+
+    gap: 5rem;
 }
 </style>

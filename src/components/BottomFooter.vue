@@ -20,5 +20,9 @@ export default {
     background-color: black;
     text-align: center;
     padding: 2rem 0;
+    border-top: 1px solid gray;
+
+    font-weight: 300;
+    color: lightgray;
 }
 </style>

@@ -36,10 +36,20 @@ export default {
 ul {
     list-style-type: none;
     padding-left: 0;
+
+    li {
+        padding-bottom: 1rem;
+    }
 }
 
 a {
     text-decoration: none;
-    color: white;
+    font-weight: 300;
+    color: lightgray;
+    transition: color 0.2s ease;
+
+    &:hover {
+        color: orange;
+    }
 }
 </style>
