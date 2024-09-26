@@ -32,7 +32,7 @@ export default {
   },
   mounted() {
     this.cards.forEach((card, index) => {
-      this.animateValue(this.$refs.valueRefs[index], 0, card.number, 20000);
+      this.animateValue(this.$refs.valueRefs[index], 0, card.number, 25000);
     });
   },
   methods: {
