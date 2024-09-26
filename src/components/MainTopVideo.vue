@@ -56,6 +56,15 @@ section {
   height: 70vh;
 }
 
+h2 {
+  color: white;
+  font-size: 50px;
+}
+
+svg {
+  height: 100px;
+}
+
 img {
   width: 100%;
   height: 100%;
@@ -71,11 +80,9 @@ div {
   font-size: 15rem;
   display: flex;
   flex-direction: column;
-  gap: 30px;
 }
 #player {
   cursor: pointer;
-  margin-bottom: 20px;
   &:hover {
     scale: 1.1;
   }
