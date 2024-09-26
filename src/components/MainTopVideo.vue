@@ -12,7 +12,8 @@ export default {
     <section id="video"> 
         <img src="../assets/img/Video.jpg" alt="">
         <div>
-            <i class="fa-regular fa-circle-play"></i>
+            <i class="fa-regular fa-circle-play">
+            </i>
             <h2>NEW MUSIC VIDEO</h2>
         </div>
     </section>
