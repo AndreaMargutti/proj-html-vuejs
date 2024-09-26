@@ -135,6 +135,7 @@ $height: calc(100vw / $boxes_per_page);
   height: $height;
   overflow: hidden;
   white-space: nowrap;
+  margin-top: 50px;
   .box{
   height:$height;
   width: calc(100% / $boxes_per_page);
