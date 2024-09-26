@@ -32,7 +32,7 @@ export default {
 
 <template>
     <MainTopJumbo />
-    <MainTopCard />
+    <MainTopCard :cardInfo="cardsInfo" />
 </template>
 
 <style lang="scss" scoped>

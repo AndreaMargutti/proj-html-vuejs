@@ -4,7 +4,14 @@ export default {
     return {
       
     }
+  },
+
+  props: {
+    cardInfo: {
+      type: Object,
+      required: true
   }
+}
 }
 </script>
 
