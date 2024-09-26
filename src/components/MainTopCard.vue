@@ -22,15 +22,17 @@ methods: {
 </script>
 
 <template>
-  <section>
-    <div class="card text-center w-100" v-for="(card, i) in cardInfo" :key="i">
-      <div class="card-body">
-        <img :src="getImgPaths(card.icon)" class="card-img-top">
-        <h2 class="card-title">{{ card.title }}</h2>
-        <p class="card-text">{{ card.text }}</p>
+  <div id="container">
+    <section>
+      <div class="card text-center w-100" v-for="(card, i) in cardInfo" :key="i">
+        <div class="card-body">
+          <img :src="getImgPaths(card.icon)" class="card-img-top">
+          <h2 class="card-title">{{ card.title }}</h2>
+          <p class="card-text">{{ card.text }}</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -57,11 +59,17 @@ methods: {
   }
 }
 
+#container {
+  position: relative;
+}
+
 section {
   display: flex;
   max-width: 75%;
   margin: 0 auto;
-  position: relative;
-  top: -10rem;
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
 }
 </style>

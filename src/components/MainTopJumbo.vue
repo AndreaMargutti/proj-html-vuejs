@@ -2,7 +2,7 @@
 import ReadMoreBtn from "./ReadMoreBtn.vue"
 export default {
     components: {
-      ReadMoreBtn
+      ReadMoreBtn,
     },
 
   data() {

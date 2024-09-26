@@ -1,6 +1,7 @@
 <script>
 import MainTopJumbo from "./MainTopJumbo.vue"
 import MainTopCard from "./MainTopCard.vue";
+import MainTopInfo from "./MainTopInfo.vue";
 export default {
   data() {
     return {
@@ -25,7 +26,8 @@ export default {
   },
   components: {
     MainTopJumbo,
-    MainTopCard
+    MainTopCard,
+    MainTopInfo,
   }
 }
 </script>
@@ -33,7 +35,9 @@ export default {
 <template>
     <MainTopJumbo />
     <MainTopCard :cardInfo="cardsInfo" />
+    <MainTopInfo />
 </template>
 
 <style lang="scss" scoped>
+
 </style>
