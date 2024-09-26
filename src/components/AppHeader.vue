@@ -76,10 +76,54 @@ export default {
           {
             name: "Product Type",
             url: "#",
+            dropList: [
+              {
+                name: "Simple Product",
+                url: "#",
+              },
+              {
+                name: "External/Affiliate Product",
+                url: "#",
+              },
+              {
+                name: "Downloadable Product",
+                url: "#",
+              },
+              {
+                name: "Group Product",
+                url: "#",
+              },
+              {
+                name: "In-Stock Product",
+                url: "#",
+              },
+              {
+                name: "Variable Product",
+                url: "#",
+              }
+            ]
           },
           {
             name: "Shop Page",
             url: "#",
+            dropList: [
+              {
+                name: "Checkout",
+                url: "#",
+              },
+              {
+                name: "Cart",
+                url: "#",
+              },
+              {
+                name: "Downloads",
+                url: "#",
+              },
+              {
+                name: "My Account",
+                url: "#",
+              }
+            ]
           },
         ],
       },
