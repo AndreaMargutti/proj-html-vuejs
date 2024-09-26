@@ -4,7 +4,7 @@ import ReadMoreBtn from './ReadMoreBtn.vue';
 export default {
     data() {
         return {
-
+            buttonText: 'SEND MESSAGE'
         }
     },
     components: {
@@ -18,10 +18,14 @@ export default {
         <h2 class="mb-4">
             NEWSLETTER
         </h2>
-        <input class="mb-4" type="text" placeholder="Email">
-        <input class="mb-4" type="text" placeholder="Message">
-        <div class="btn">
-            <ReadMoreBtn />
+        <div class="mb-3">
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" id="message-input" placeholder="Message" rows="3"></textarea>
+        </div>
+        <div class="button">
+            <ReadMoreBtn :text="buttonText" />
         </div>
     </div>
 
@@ -34,6 +38,19 @@ export default {
 
     .btn {
         align-self: flex-start;
+    }
+
+    .form-control {
+        border-radius: 0;
+        border-color: gray;
+        background-color: transparent;
+        padding: 1rem;
+
+        &::placeholder {
+            color: gray;
+            opacity: 1;
+            /* Firefox */
+        }
     }
 }
 </style>
