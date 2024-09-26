@@ -27,7 +27,7 @@ export default {
 #blog{
   background-color: black;
   color: #f2870c;
-  height: 600px;
+  height: 1000px;
 
   h4{
     text-align: center;
