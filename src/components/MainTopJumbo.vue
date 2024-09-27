@@ -37,7 +37,7 @@ export default {
 
 <template>
   <section id="jumbo">
-    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="" />
+    <img :src="getImgPaths(this.imageList[this.activeIndex])" alt="jumbo-img" class="fadeImg" />
     <button class="slide-btn left" @click="changeImg">
       <i class="fa-solid fa-angle-left"></i>
     </button>
