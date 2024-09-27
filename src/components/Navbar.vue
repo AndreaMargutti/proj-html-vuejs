@@ -43,7 +43,7 @@ export default {
 @use "../style/partials/mixins.scss" as *;
 
 .navbar {
-  height: 100%;
+  height: 100px;
 
   .navbar-list {
     @include flex(row, nowrap);
@@ -55,7 +55,7 @@ export default {
       width: 250px;
       background-color: #1f1f1f;
       position: absolute;
-      top: 50px;
+      top: 100px;
       list-style: none;
 
       li {
