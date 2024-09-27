@@ -28,8 +28,20 @@ export default {
               class="fa-solid fa-angle-down"></i></a>
 
           <ul class="drop-list m-0 p-0">
-            <li class="drop-list-item" v-for="(dropItem, j) in item.dropList" :key="j">
-              <a :href="dropItem.url" v-text="dropItem.name"></a>
+            <li class="drop-list-item drop-list-item-side" v-for="(dropItem, j) in item.dropList" :key="j">
+              <a v-if="!dropItem.dropList" :href="dropItem.url" v-text="dropItem.name"></a>
+
+              <div v-else class="drop-menu">
+                <a :href="dropItem.url"> {{ dropItem.name }} <i class="fa-solid fa-angle-down"></i></a>
+
+                <ul class="drop-list-side m-0 p-0">
+                  <li class="drop-list-item" v-for="(dropItem, j) in dropItem.dropList" :key="j">
+                    <a :href="dropItem.url" v-text="dropItem.name"></a>
+                  </li>
+                </ul>
+              </div>
+
+
             </li>
           </ul>
         </div>
@@ -43,7 +55,7 @@ export default {
 @use "../style/partials/mixins.scss" as *;
 
 .navbar {
-  height: 100%;
+  height: 100px;
 
   .navbar-list {
     @include flex(row, nowrap);
@@ -55,7 +67,7 @@ export default {
       width: 250px;
       background-color: #1f1f1f;
       position: absolute;
-      top: 50px;
+      top: 100px;
       list-style: none;
 
       li {
@@ -87,10 +99,6 @@ export default {
     display: block;
   }
 
-  .navbar-list-item:hover .drop-menu>a {
-    color: orange;
-  }
-
   .navbar-list-item {
     display: flex;
     align-items: center;
@@ -101,8 +109,28 @@ export default {
   }
 
   .shop-item .drop-list {
-    right: 0;
+    right: -150px;
     left: auto;
   }
+}
+
+.drop-list-side {
+  display: none;
+  width: 250px;
+  background-color: #1f1f1f;
+  position: absolute;
+  top: 0px;
+  right: 250px;
+  list-style: none;
+
+  li {}
+
+  li:not(:last-child) {
+    border-bottom: 1px solid #333;
+  }
+}
+
+.drop-list-item-side:hover .drop-list-side {
+  display: block;
 }
 </style>

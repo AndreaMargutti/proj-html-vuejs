@@ -24,9 +24,7 @@ export default {
             window.scrollTo(0, 0);
         },
         handleScroll() {
-            console.log('gestico lo scroll');
             this.scrolledPx = window.scrollY;
-
         }
     },
     created() {
