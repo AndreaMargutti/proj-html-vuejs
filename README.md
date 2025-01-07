@@ -16,3 +16,6 @@ La cartella `src` ha la seguente struttura:
 - Il file `App.vue` da cui parte tutto l-applicattivo
 - Il file `main.js`
 
+### Schema Componenti
+
+![Schema Progetto](ProjectScheme.jpg)
