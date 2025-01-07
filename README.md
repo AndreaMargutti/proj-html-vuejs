@@ -17,5 +17,13 @@ La cartella `src` ha la seguente struttura:
 - Il file `main.js`
 
 ### Schema Componenti
-
 ![Schema Progetto](ProjectScheme.jpg)
+
+I componenti principali, ovvero quelli importati direttamente nel file `App.vue` sono in questo ordine:
+1. `AppHeader`
+2. `AppMain`
+3. `AppFooter`
+4. `ScrollTopButton`
+5. `OverlayWindow`
+
+Tutti i restanti componenti presenti nella cartella sopra citata sono inseriti, a seconda del loro scopo, in uno o piu di questi componenti
