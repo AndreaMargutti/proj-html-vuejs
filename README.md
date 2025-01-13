@@ -1,5 +1,7 @@
 # Progetto Front-End Boolean
 
+
+
 ## Descrizione
 
 Scaricando questa repository vedrete uno dei progetti realizzati durante i 6 mesi di corso Boolean in Full-Stack Web Development. In particolare questo progetto fu realizzato come finale della parte riguardante il Front-End. Si tratta di un possibile sito vetrina per un'azienda in ambito musicale. Piu avanti nella documentazione analizzeremo meglio le varie sezioni.
