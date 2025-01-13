@@ -1,6 +1,6 @@
 # Progetto Front-End Boolean
 
-
+![Anteprima](Anteprima.png)
 
 ## Descrizione
 
