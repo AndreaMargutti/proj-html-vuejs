@@ -32,46 +32,12 @@ I componenti principali, ovvero quelli importati direttamente nel file `App.vue`
 
 Tutti i restanti componenti presenti nella cartella sopra citata sono inseriti, a seconda del loro scopo, in uno o piu di questi componenti.
 
-## AppHeader
-
-All'interno del componente AppHeader abbiamo due sottocomponenti:
-1. `Navbar`
-2. `HeaderSearch`
-
-Inoltre si nota come siano presenti i dati per il popolamento della navbar ovvero le voci che andranno a popolarla:
-- Home
-- Blog
-- Events
-    - Choral Music
-    - Concert Band
-    - Opera Concerts
-    - Symphony Orchestra
-    - Family Concerts
-- Gallery
-- About Us
-- Contact Us
-- Shop
-    - Product Type
-        - Simple Product
-        - External/Affilate Product
-        - Downloadable Product
-        - Group Product
-        - In-Stock Product
-        - Variable Product
-    - Shop Page
-        - Checkout
-        - Cart
-        - Downloads
-        - My Account
-
-
-## AppMain
-
-## AppFooter
-
-## ScrollTopButton
-
-## OverlayWinow
+# Come visualizzare il progetto nel browser
+1. Scaricare la suddetta repository
+2. Aprire la repo in un qualsiasi IDE
+3. Eseguire il comando `npm install` da terminale.
+4. Eseguire il comando `npm run dev` da terminale e aprire il 'link' che vi si apre.
+5. Godetevi il risultato!
 
 ## Credits
 Creato da **AndreaMargutti** via *Boolean*
